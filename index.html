@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Shifumi</title>
+</head>
+
+<body>
+    <div id="slashbg"></div>
+    <main class="gridtemplate">
+        <!-- Formulaire d'arriver -->
+        <form action="" id="formcontact" class="start">
+            <h2>Veuillez saisir votre pseudo</h2>
+            <input type="text" id="prenom" class="leprenom">
+            <input type="button" value="Envoyer" id="send" class="lid">
+        </form>
+
+        <h1>シフミ</h1>
+        <p class="pourcentage"></p>
+        <div class="Vs">
+            <p id="log"></p><img src="assets/img/versus.png" alt="Image de versus" class="imgVs">
+            <p>Computer</p>
+        </div>
+
+        <!-- le jeu --> 
+        <div class="stat">
+            <h2 class="score">SCORE</h2>
+            <p>0 - 0</p>
+        </div>
+        <div class="carte">
+            <div class="imgDiv"><img src="assets/img/pierre.png" alt="Pierre" class="imgShifumi img-rock" id="rock"
+                    draggable="true" data-hand="rock"></div>
+            <div class="imgDiv"><img src="assets/img/feuille.png" alt="Papier" class="imgShifumi img-paper" id="paper"
+                    draggable="true" data-hand="paper"></div>
+            <div class="imgDiv"><img src="assets/img/cut.png" alt="Ciseaux" class="imgShifumi img-cut" id="cut"
+                    draggable="true" data-hand="cut"></div>
+        </div>
+            <div class="case"></div>
+            <div class="computer"></div>
+        <!-- Table -->
+        <img src="assets/img/table_ombre.png" alt="Image de table" class="imgTable">
+
+        <!-- Section Modale -->
+        <button class="information"><i class="fas fa-info" id="imgInfo"></i></button>
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content ">
+                <span class="close">&times;</span>
+                <h2>Les règles</h2> <br>
+                <h3>Comment jouer à pierre papier ciseaux ?</h3> <br>
+                <p>Les règles du jeu sont vraiment très simples et <strong>vous n’avez besoin de rien pour
+                        jouer</strong>, si ce n’est que vos mains. Comme il existe plusieurs variantes je vais vous
+                    présenter les règles de la version classique du shifumi qui se joue à 2 joueurs. A l’aide de vos
+                    mains vous aurez la possibilité de choisir entre 3 signes&nbsp;: la pierre, le papier ou les
+                    ciseaux.</p> <br>
+                <ol>
+                    <li>Les 2 joueurs doivent placer leurs mains dans le dos</li>
+                    <li>Prononcez Shi Fu Mi (se prononce Chi Fou Mi) ou comptez jusqu’à 3</li>
+                    <li>Dévoilez votre choix en réalisant le signe avec votre main</li>
+                </ol>
+                <br>
+                <p>Une fois que les deux joueurs ont dévoilés leurs signes voici comment est déterminé le gagnant.</p>
+                <br>
+                <ul>
+                    <li>La pierre casse les ciseaux, la pierre gagne contre les ciseaux</li>
+                    <li>Les ciseaux coupent le papier, les ciseaux gagnent contre le papier</li>
+                    <li>Le papier recouvre la pierre, le papier gagne contre la pierre</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Défaites -->
+        <div class="bgLose">
+            <div class="lose">
+                <img src="assets/img/perdu_bleu.png" alt="Image de pouce vers le bas" id="imgLose">
+            </div>
+        </div>
+    </main>
+    <script src="https://kit.fontawesome.com/bcc4c7fee2.js" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

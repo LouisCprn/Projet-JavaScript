@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+ 
+}
+html{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+@font-face {
+    font-family: "NotoSansJP-Bold";
+    src: url(../font/NotoSansJP-Bold.otf);
+}
+
+@font-face {
+    font-family: "NotoSansJP-Regular";
+    src: url(../font/NotoSansJP-Regular.otf);
+}
+
+@font-face {
+    font-family: "NotoSansJP-Light";
+    src: url(../font/NotoSansJP-Light.otf);
+}
+
+body{
+    background-color: #FAF0E6;
+}
+/* tout en none */
+
+#formcontact{
+   text-align: center;
+    display: grid;
+    grid-template-columns: repeat(10 , 10vh);
+    grid-template-rows: repeat(10 , 10vw);
+    font-family: "NotoSansJP-Regular";
+}
+
+#formcontact h2 {
+    grid-column: 3/7;
+    grid-row: 2/3;
+
+}
+
+.leprenom{
+grid-column: 3/4;
+grid-row: 3/4;
+}
+
+.lid{
+    grid-column: 3/4;
+    grid-row: 4/5;
+    font-family: "NotoSansJP-Regular";
+}
+
+#formcontact input{
+    width: 300px;
+    height: 50px;
+    border-radius: 40px;
+    border: none;
+    margin: 10px;
+    text-align: center;
+}
+
+
+/* le reste */
+
+#slashbg{
+   position: absolute;
+   right: 50%;
+    width: 10vw;
+    height: 150vh;
+    background-color: #828489;
+    transform: rotate(30deg) translateY(-20%);
+    z-index: -1;
+}
+
+.gridtemplate {
+    display: grid;
+    grid-template-columns: repeat(10, 10vw);
+    grid-template-rows: repeat(10, 10vh);
+}
+
+h1 {
+    font-family: "NotoSansJP-Bold";
+    margin-top: 4vh;
+    margin-left: 10vh;
+    font-size: 6vh;
+    grid-column: 1/4;
+    grid-row: 1/2;
+}
+
+.Vs {
+    background-color: #fff;
+    font-family: "NotoSansJP-Regular";
+    font-size: 5vh;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    grid-column: 4/8;
+    grid-row: 2/2;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.imgVs {
+    height: 70px;
+    width: 70px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 15px;
+}
+
+.imgTable {
+    display: none;
+    grid-column: 3/9;
+    grid-row: 5/8;
+    margin-left: 5.6vw;
+}
+/* le jeu */
+
+.stat {
+    display: none;
+    grid-column: 9/10;
+    grid-row: 2/3;
+    font-family: "NotoSansJP-Regular";
+    font-size: 3vh;
+}
+
+.stat h2 p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgShifumi {
+    width: 80px;
+}
+
+.carte {
+    display: none;
+    grid-column: 2/10;
+    grid-row: 8/10;
+    justify-content: space-evenly;
+}
+
+.imgDiv{
+    background: #fff;
+    padding: 2%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.case {
+    grid-column: 4/5;
+    grid-row: 4/5;
+    margin-left: 5vw;
+    width: 150px;
+    height: 150px;
+    border: 4px dashed ;
+    z-index: 2;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(90deg);
+ }
+
+.computer {
+    grid-column: 6/7;
+    grid-row: 4/5;
+    margin-left: 5vw;
+    width: 150px;
+    height: 150px;
+    border: 4px dashed ;
+    z-index: 2;
+    display: none;
+}
+/* ---------- Modal règle ---------- */
+.information {
+    grid-column: 9/10;
+    grid-row: 9/10;
+    border-radius: 50%;
+    width: 80px;
+    margin-left: 8vw;
+    background-color: #fff;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#imgInfo {
+    color: #828489;
+    font-size: 3vh;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 4;
+    /* Sit on top */
+    left: 4px;
+    bottom: 7%;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    font-family: "NotoSansJP-Regular";
+}
+
+/* Modal Content/Box */
+.modal-content {
+    border: solid 5px #272932;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    background-color: #FAF0E6;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    width: 50%;
+    /* Could be more or less, depending on screen size */
+    padding: 30px;
+
+}
+
+
+
+.modalregle {
+    display: grid;
+    grid-column: 10/10;
+    grid-row: 9/10;
+}
+
+/* The Close Button */
+.close {
+    color: #272932;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* -------------Lose----------- */
+
+.bgLose {
+    display: none;
+}
+
+#imgLose {
+    display: none;
+}
+
+/* ----------Media-Query------- */
+
+
+@media screen AND (max-width : 768px){     
+     #slashbg{
+         display: none;
+     }
+
+     .gridtemplate {
+        display: grid;
+        grid-template-columns: repeat(10, 10vw);
+        grid-template-rows: repeat(10, 10vh);
+    }
+
+    h1 {
+        font-family: "NotoSansJP-Bold";
+        margin-top: 4vh;
+        margin-left: 10vh;
+        font-size: 6vh;
+        grid-column: 1/4;
+        grid-row: 1/2;
+    }
+
+    .imgTable {
+        width: 40vh;
+    }
+}
