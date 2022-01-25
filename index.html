@@ -13,11 +13,11 @@
     <div id="slashbg"></div>
     <main class="gridtemplate">
         <!-- Formulaire d'arriver -->
-        <form action="" id="formcontact" class="start">
-            <h2>Veuillez saisir votre pseudo</h2>
+        <div class="form">
+            <h2 class="text">Veuillez saisir votre pseudo</h2>
             <input type="text" id="prenom" class="leprenom">
-            <input type="button" value="Envoyer" id="send" class="lid">
-        </form>
+            <button class="lid" id="send">Envoyer</button>
+        </div>
 
         <h1>シフミ</h1>
         <p class="pourcentage"></p>
@@ -26,10 +26,10 @@
             <p>Computer</p>
         </div>
 
-        <!-- le jeu --> 
+        <!-- le jeu -->
         <div class="stat">
             <h2 class="score">SCORE</h2>
-            <p>0 - 0</p>
+            <div class="current-scores"><span class="user-score">0</span> - <span class="cpu-score">0</span></div>
         </div>
         <div class="carte">
             <div class="imgDiv"><img src="assets/img/pierre.png" alt="Pierre" class="imgShifumi img-rock" id="rock"
@@ -39,8 +39,8 @@
             <div class="imgDiv"><img src="assets/img/cut.png" alt="Ciseaux" class="imgShifumi img-cut" id="cut"
                     draggable="true" data-hand="cut"></div>
         </div>
-            <div class="case"></div>
-            <div class="computer"></div>
+        <div class="case"></div>
+        <div class="computer"></div>
         <!-- Table -->
         <img src="assets/img/table_ombre.png" alt="Image de table" class="imgTable">
 
@@ -75,11 +75,16 @@
         </div>
 
         <!-- Défaites -->
-        <div class="bgLose">
-            <div class="lose">
-                <img src="assets/img/perdu_bleu.png" alt="Image de pouce vers le bas" id="imgLose">
-            </div>
+        <div class="thumbsdown">
+            <img src="assets/img/perdu_bleu.png" class="imglose" alt="Image de pouce vers le bas" srcset="">
         </div>
+        <p class="lose">Défaite !</p>
+
+        <!-- Win -->
+        <div class="thumbsup">
+            <img src="assets/img/perdu_bleu.png" class="imgwin" alt="Image de pouce vers le haut" srcset="">
+        </div>
+        <p class="win">Victoire !</p>
     </main>
     <script src="https://kit.fontawesome.com/bcc4c7fee2.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>

@@ -3,9 +3,9 @@ var input = document.getElementById('send');
 
 
 input.addEventListener('click', () => {
-
+  console.log('test')
   var Vs = document.querySelector('.Vs');
-  var form = document.querySelector('.start');
+  var form = document.querySelector('.form');
   var table = document.querySelector('.imgTable');
   var score = document.querySelector('.stat');
   var carte = document.querySelector('.carte');
@@ -43,33 +43,123 @@ window.onclick = function (event) {
 }
 
 // Jeu du Shifumi
+var userChoice;
+var computerChoice;
+var userArea = document.querySelector('.case');
+
+
+
 var rock = document.getElementById('rock');
 var paper = document.getElementById('paper');
 var cut = document.getElementById('cut');
 
-var box = document.querySelector('.case')
+var user_icon = document.querySelector('.case');
+var computer_icon = document.querySelector('.computer');
 
-rock.addEventListener('dragstart', (ev) => {
+var putUserScore = document.querySelector('.user-score');
+var putCpuScore = document.querySelector('.cpu-score');
+
+var hand = document.querySelectorAll('.carte div img');
+
+var userScore = 0;
+var computerScore = 0;
+
+(function user() {
+
+  for (var i = 0; i < hand.length; i++) {
+    hand[i].ondragstart = dragStart;
+  }
+
+  function dragStart() {
+    userChoice = this.getAttribute("data-hand");
+  }
+
+  rock.addEventListener('dragstart', (ev)=>{
     ev.dataTransfer.setData("text", ev.target.id);
-    console.log('test')
-})
+  })
 
-paper.addEventListener('dragstart', (ev) => {
+  paper.addEventListener('dragstart', (ev)=>{
     ev.dataTransfer.setData("text", ev.target.id);
-    console.log('test')
-})
+  })
 
-cut.addEventListener('dragstart', (ev) => {
+  cut.addEventListener('dragstart', (ev)=>{
     ev.dataTransfer.setData("text", ev.target.id);
-    console.log('test')
-})
+  })
 
-box.addEventListener('drop', (ev) => {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-})
+  userArea.addEventListener('dragover', function (e) {
+    e.preventDefault();
+  });
 
-box.addEventListener('dragover', (ev) =>{
-    ev.preventDefault();
-})
+  userArea.addEventListener('drop', function (e) {
+    e.preventDefault();
+
+    var data = e.dataTransfer.getData("text");
+    e.target.innerHTML = document.getElementById(data).outerHTML;
+
+    computerChoice = cpu();
+
+    whowins(computerChoice, userChoice);
+    setTimeout(function(){
+      reset();
+    }, 1000);
+  });
+})();
+
+
+
+var cpu = function () {
+  choice = Math.random();
+  if (choice < 0.34) {
+    return "rock";
+  } else if (choice <= 0.67) {
+    return "paper";
+  } else {
+    return "cut";
+  }
+}
+
+function whowins(cpu, user) {
+
+  if (cpu == "rock") {
+    if (user == "paper") {
+      userScore++;
+      changeColor('case');
+    } else if (user == "cut") {
+      computerScore++;
+      changeColor('computer')
+    }
+  } else if (cpu == "paper") {
+    if (user == "rock") {
+      computerScore++;
+      changeColor('computer')
+    } else if (user == "cut") {
+      userScore++;
+      changeColor('case')
+    }
+  } else if (cpu == "cut") {
+    if (user == "rock") {
+      userScore++;
+      changeColor('case')
+    } else if (user == "paper") {
+      computerScore++;
+      changeColor('computer')
+    }
+  }
+
+  function changeColor(entitiy) {
+    var enty = entitiy;
+    document.querySelector('.' + entitiy).style.borderColor = "green"
+    setTimeout(function () {
+      document.querySelector('.' + entitiy).style.borderColor = "black"
+    }, 1000);
+  }
+
+  putUserScore.innerHTML = userScore;
+  putCpuScore.innerHTML = computerScore;
+
+}
+
+function reset(){
+  userArea.innerHTML = '';
+  console.log('fin')
+}
