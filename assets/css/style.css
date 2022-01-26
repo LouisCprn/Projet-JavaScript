@@ -193,6 +193,8 @@ h1 {
 
 .computer * {
     transform: scaleY(-1) rotate(-90deg);
+    margin-top: 2vh;
+    margin-left: 2vw;
  }
 
 .pourcentagePlayer {
@@ -272,34 +274,84 @@ h1 {
 
 /* -------------Lose----------- */
 
-.imglose {
+.thumbsdown {
+    grid-column: 4/10;
+    grid-row: 3/10;
+    background-color: white;
+    border-radius: 70%;
+    height: 350px;
+    width: 350px;
+    margin-left: 80px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: none;
+    
 }
 
-.thumbsdown {
-    display: none;
+.imglose {
+    width: 230px;
+    height: 230px;
+    padding-top: 80px ;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
 }
+
+
 
 .lose {
-    display: none;
+    grid-column: 4/10;
+    grid-row: 8/10;
+    font-family: "NotoSansJP-Bold";
+    font-size: 50pt;
+    margin-left: 120px;
+    text-shadow: rgb(173, 173, 173) 0px 5px 15px;
+    color: #4D7EA8;
 }
 
-/* -------------Lose----------- */
+/* -------------win----------- */
 
-.imgwin {
-    display: none;
-}
+
+
 
 .thumbsup {
+    grid-column: 4/10;
+    grid-row: 3/10;
+    background-color: white;
+    border-radius: 70%;
+    height: 350px;
+    width: 350px;
+    margin-left: 80px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
     display: none;
+}
+
+.imgwin {
+    width: 230px;
+    height: 230px;
+    padding-top: 50px ;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;  
+   
 }
 
 .win {
-    display: none;
+    grid-column: 4/10;
+    grid-row: 8/10;
+    font-family: "NotoSansJP-Bold";
+    font-size: 50pt;
+    margin-left: 110px;
+    text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: #F86624;
+
 }
+
 
 /* ----------Media-Query------- */
 @media screen AND (max-width: 1200px) {
+
+
+
 
     #slashbg{
         display: none;

@@ -156,25 +156,37 @@ var computerScore = 0;
       case 'pierre':
         if(computerChoice == 'pierre'){
           document.querySelector('.computer').innerHTML = '<img src="assets/img/pierre.png" alt="Pierre" class="imgShifumi" id="rock" draggable="true" data-hand="rock">' ;
+        
         };
         break;
       case 'feuille':
         if(computerChoice == 'feuille'){
            document.querySelector('.computer').innerHTML = '<img src="assets/img/feuille.png" alt="Papier" class="imgShifumi" id="paper" draggable="true" data-hand="paper">' ;
+          
         };
         break;
       case 'ciseaux':
         if(computerChoice == 'ciseaux'){
            document.querySelector('.computer').innerHTML = '<img src="assets/img/cut.png" alt="Ciseaux" class="imgShifumi" id="cut" draggable="true" data-hand="cut">' ;
+          
         };
         break;
     }
+    
+    
+
+  
 
     setTimeout(function(){
       reset();
+      showresult();
     }, 1000);
+
+
   });
 })();
+
+
 
 let result = ['pierre', 'feuille', 'ciseaux'] 
 var computerChoice = "";
@@ -194,6 +206,7 @@ function randomComputer() {
     computerChoice = "ciseaux";
   }
   return computerChoice;
+
 }
 
 function reset(){
@@ -210,4 +223,46 @@ function pourcentage() {
   pourcentagePlayer.innerHTML = Math.round(scorePlayer / (scorePlayer + scoreComputer) * 100) + '%';
 }
 
+function showresult() {
+  var Vs = document.querySelector('.Vs');
+  var table = document.querySelector('.imgTable');
+  var score = document.querySelector('.stat');
+  var carte = document.querySelector('.carte');
+  var player = document.querySelector('.case');
+  var computer = document.querySelector('.computer');
+  var pourcentagePlayer = document.querySelector('.pourcentagePlayer');
+  var thumbsdown = document.querySelector('.thumbsdown')
+  var thumbsup = document.querySelector('.thumbsup');
+  var slash = document.getElementById('slashbg');
+
+  var userscore = document.querySelector('.user-score').textContent;
+    if (userscore == 3){
+      thumbsup.style.display = 'flex';
+      Vs.style.display = 'none';
+      table.style.display = 'none';
+      score.style.display = 'none';
+      carte.style.display = 'none';
+      player.style.display = 'none';
+      computer.style.display = 'none';
+      pourcentagePlayer.style.display = 'none';
+      document.body.style.background = "#FAF0E6";
+      slash.style.display = 'none';
+    };
+  var cpscore = document.querySelector('.cpu-score').textContent;
+    if (cpscore == 3){
+      thumbsdown.style.display = 'flex';
+      Vs.style.display = 'none';
+      table.style.display = 'none';
+      score.style.display = 'none';
+      carte.style.display = 'none';
+      player.style.display = 'none';
+      computer.style.display = 'none';
+      pourcentagePlayer.style.display = 'none';
+      document.body.style.background = "#828489";
+    }
+    
+  }
+
+
+  
 
