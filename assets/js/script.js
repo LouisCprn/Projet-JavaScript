@@ -42,8 +42,6 @@ window.onclick = function (event) {
 }
 
 // Jeu du Shifumi
-var userChoice;
-var computerChoice;
 var userArea = document.querySelector('.case');
 
 var cpuArea = document.querySelector('.computer');
@@ -52,8 +50,8 @@ var rock = document.getElementById('rock');
 var paper = document.getElementById('paper');
 var cut = document.getElementById('cut');
 
-var putUserScore = document.querySelector('.user-score');
-var putCpuScore = document.querySelector('.cpu-score');
+var UserScore = document.querySelector('.user-score');
+var CpuScore = document.querySelector('.cpu-score');
 
 var hand = document.querySelectorAll('.carte div img');
 
@@ -92,71 +90,125 @@ var computerScore = 0;
     var data = e.dataTransfer.getData("text");
     e.target.innerHTML = document.getElementById(data).outerHTML;
 
-    computerChoice = cpu();
+    switch (data) {
+      case 'paper':
+        paper.value = "feuille";
+        userChoice = paper.value;
+        computerChoice = randomComputer();
+  
+        switch (computerChoice) {
+          case "feuille":
+            break;
+          case "ciseaux":
+            document.querySelector('.cpu-score').textContent = parseInt(document.querySelector('.cpu-score').textContent) + 1;
+            // pourcentage()
+            break;
+          case "pierre":
+         
+            document.querySelector('.user-score').textContent = parseInt(document.querySelector('.user-score').textContent) + 1;
+            // pourcentage()
+            break;
+        }
+  
+        break;
+  
+      case 'rock':
+        rock.value = "pierre";
+        userChoice = rock.value;
+        computerChoice = randomComputer();
+  
+        switch (computerChoice) {
+          case "pierre":
+            break;
+          case "feuille":
+            document.querySelector('.cpu-score').textContent = parseInt(document.querySelector('.cpu-score').textContent) + 1;
+            // pourcentage()
+            break;
+          case "ciseaux":
+            document.querySelector('.user-score').textContent = parseInt(document.querySelector('.user-score').textContent) + 1;
+            // pourcentage()
+            break;
+        }
+  
+        break;
+  
+      case 'cut':
+        cut.value = "ciseaux";
+        userChoice = cut.value;
+        computerChoice = randomComputer();
+  
+        switch (computerChoice) {
+          case "ciseaux":
+            break;
+          case "pierre":
+            document.querySelector('.cpu-score').textContent = parseInt(document.querySelector('.cpu-score').textContent) + 1;
+            // pourcentage()
+            break;
+          case "feuille":
+           
+            document.querySelector('.user-score').textContent = parseInt(document.querySelector('.user-score').textContent) + 1;
+            // pourcentage()
+            break;
+        }
+  
+        break;
+    }
+    switch(computerChoice){
+      case 'pierre':
+        if(computerChoice == 'pierre'){
+          document.querySelector('.computer').innerHTML = '<img src="assets/img/pierre.png" alt="Pierre" class="imgShifumi" id="rock" draggable="true" data-hand="rock">' ;
+        };
+        break;
+      case 'feuille':
+        if(computerChoice == 'feuille'){
+           document.querySelector('.computer').innerHTML = '<img src="assets/img/feuille.png" alt="Papier" class="imgShifumi" id="paper" draggable="true" data-hand="paper">' ;
+        };
+        break;
+      case 'ciseaux':
+        if(computerChoice == 'ciseaux'){
+           document.querySelector('.computer').innerHTML = '<img src="assets/img/cut.png" alt="Ciseaux" class="imgShifumi" id="cut" draggable="true" data-hand="cut">' ;
+        };
+        break;
+    }
 
-    whowins(computerChoice, userChoice);
     setTimeout(function(){
       reset();
     }, 1000);
   });
 })();
 
-let result = ['rock', 'paper', 'cut'] 
+let result = ['pierre', 'feuille', 'ciseaux'] 
+var computerChoice = "";
 
-var cpu = function () {
-  choice = Math.random();
-  if (choice < 0.33) {
-    return document.querySelector('.computer').innerHTML = '<img src="assets/img/pierre.png" alt="Pierre" class="imgShifumi img-rock" id="rock" draggable="true" data-hand="rock">' ;
-  } else if (choice >= 0.67) {
-    return document.querySelector('.computer').innerHTML = '<img src="assets/img/feuille.png" alt="Papier" class="imgShifumi img-paper" id="paper" draggable="true" data-hand="paper">' ;
-  } else if(choice > 0.67){
-    return document.querySelector('.computer').innerHTML = '<img src="assets/img/cut.png" alt="Ciseaux" class="imgShifumi img-cut" id="cut" draggable="true" data-hand="cut">' ;
-  }
-}
+function randomComputer() {
+  var random = Math.floor(Math.random() * result.length);
 
-function whowins(cpu, user) {
-
-  if (cpu === 'rock') {
-    if (user == "paper") {
-      userScore++; 
-      changeColor('case');
-    } else if (user =="cut") {
-      computerScore++;
-      changeColor('computer')
-    }
-  } else if (cpu === "paper") {
-    if (user =="rock") {
-      computerScore++;
-      changeColor('computer')
-    } else if (user == "cut") {
-      userScore++;
-      changeColor('case')
-    }
-  } else if (cpu === "cut") {
-    if (user =="rock") {
-      userScore++;
-      changeColor('case')
-    } else if (user == "paper") {
-      computerScore++;
-      changeColor('computer')
-    }
-  }
- 
-
-  function changeColor(entitiy) {
-    var enty = entitiy;
-    document.querySelector('.' + entitiy).style.borderColor = "green"
-    setTimeout(function () {
-      document.querySelector('.' + entitiy).style.borderColor = "black"
-    }, 1000);
+  if (random == 0) {
+    computerChoice = "pierre";
   }
 
-  putUserScore.innerHTML = userScore;
-  putCpuScore.innerHTML = computerScore;
+  if (random == 1) {
+    computerChoice = "feuille";
+  }
 
+  if (random == 2) {
+    computerChoice = "ciseaux";
+  }
+  return computerChoice;
 }
 
 function reset(){
   userArea.innerHTML = '';
   cpuArea.innerHTML = '';
+}
+
+function pourcentage() {
+  var scorePlayer = parseInt(document.querySelector('.scorePlayer').textContent);
+  var scoreComputer = parseInt(document.querySelector('.scoreComputer').textContent);
+
+  var pourcentagePlayer = document.querySelector('.pourcentagePlayer');
+  var pourcentageComputer = document.querySelector('.pourcentageComputer');
+
+  pourcentagePlayer.innerHTML = Math.round(scorePlayer / (scorePlayer + scoreComputer) * 100) + '%';
+  pourcentageComputer.innerHTML = Math.round(scoreComputer / (scorePlayer + scoreComputer) * 100) + '%';
 }

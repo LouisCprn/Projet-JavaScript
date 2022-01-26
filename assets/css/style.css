@@ -55,6 +55,13 @@ body{
     width: 200px;
     font-size: 3vh;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    color: #828489;
+    font-weight: bold;
+}
+
+.lid:hover {
+    background-color: rgb(243, 240, 240);
 }
 
 
@@ -139,6 +146,10 @@ h1 {
     justify-content: space-evenly;
 }
 
+.imgDiv:hover {
+    background-color: rgb(243, 240, 240)
+}
+
 .imgDiv{
     background: #fff;
     padding: 2%;
@@ -190,6 +201,10 @@ h1 {
     background-color: #fff;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.information:hover {
+    background-color: rgb(243, 240, 240);
 }
 
 #imgInfo {
