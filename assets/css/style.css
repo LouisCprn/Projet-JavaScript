@@ -127,6 +127,7 @@ h1 {
     grid-row: 2/3;
     font-family: "NotoSansJP-Regular";
     font-size: 3vh;
+    text-align: center;
 }
 
 .stat h2 p {
@@ -193,6 +194,17 @@ h1 {
 .computer * {
     transform: scaleY(-1) rotate(-90deg);
  }
+
+.pourcentagePlayer {
+    display: none;
+    grid-column: 5/6;
+    grid-row: 1;
+    margin-left: 8.8vw;
+    align-items: center;
+    font-size: 5vh;
+    font-family: "NotoSansJP-Light";
+}
+
 /* ---------- Modal règle ---------- */
 .information {
     grid-column: 9/10;
@@ -363,11 +375,11 @@ h1 {
     }
  
  
- h2 {
+    h2 {
      font-size: 20pt;
      padding-left: 20px;
      text-align: center;
- }
+    }
  
  .current-scores {
        font-size: 20pt;

@@ -10,6 +10,7 @@ input.addEventListener('click', () => {
   var carte = document.querySelector('.carte');
   var player = document.querySelector('.case');
   var computer = document.querySelector('.computer');
+  var pourcentagePlayer = document.querySelector('.pourcentagePlayer');
 
   log.textContent += `${prenom.value}`;
   form.style.display = 'none';
@@ -19,6 +20,7 @@ input.addEventListener('click', () => {
   carte.style.display = 'flex';
   player.style.display = 'flex';
   computer.style.display = 'block';
+  pourcentagePlayer.style.display = 'flex';
 })
 
 // Modale règles
@@ -101,12 +103,11 @@ var computerScore = 0;
             break;
           case "ciseaux":
             document.querySelector('.cpu-score').textContent = parseInt(document.querySelector('.cpu-score').textContent) + 1;
-            // pourcentage()
             break;
           case "pierre":
          
             document.querySelector('.user-score').textContent = parseInt(document.querySelector('.user-score').textContent) + 1;
-            // pourcentage()
+            pourcentage()
             break;
         }
   
@@ -122,11 +123,10 @@ var computerScore = 0;
             break;
           case "feuille":
             document.querySelector('.cpu-score').textContent = parseInt(document.querySelector('.cpu-score').textContent) + 1;
-            // pourcentage()
             break;
           case "ciseaux":
             document.querySelector('.user-score').textContent = parseInt(document.querySelector('.user-score').textContent) + 1;
-            // pourcentage()
+            pourcentage()
             break;
         }
   
@@ -142,12 +142,11 @@ var computerScore = 0;
             break;
           case "pierre":
             document.querySelector('.cpu-score').textContent = parseInt(document.querySelector('.cpu-score').textContent) + 1;
-            // pourcentage()
             break;
           case "feuille":
            
             document.querySelector('.user-score').textContent = parseInt(document.querySelector('.user-score').textContent) + 1;
-            // pourcentage()
+            pourcentage()
             break;
         }
   
@@ -203,12 +202,12 @@ function reset(){
 }
 
 function pourcentage() {
-  var scorePlayer = parseInt(document.querySelector('.scorePlayer').textContent);
-  var scoreComputer = parseInt(document.querySelector('.scoreComputer').textContent);
+  var scorePlayer = parseInt(document.querySelector('.user-score').textContent);
+  var scoreComputer = parseInt(document.querySelector('.cpu-score').textContent);
 
   var pourcentagePlayer = document.querySelector('.pourcentagePlayer');
-  var pourcentageComputer = document.querySelector('.pourcentageComputer');
 
   pourcentagePlayer.innerHTML = Math.round(scorePlayer / (scorePlayer + scoreComputer) * 100) + '%';
-  pourcentageComputer.innerHTML = Math.round(scoreComputer / (scorePlayer + scoreComputer) * 100) + '%';
 }
+
+
