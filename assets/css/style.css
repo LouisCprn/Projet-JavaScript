@@ -166,6 +166,10 @@ h1 {
     transform: rotate(90deg);
  }
 
+ .computer * {
+    transform: scaleY(-1) rotate(-90deg);
+ }
+
 .computer {
     grid-column: 6/7;
     grid-row: 4/5;

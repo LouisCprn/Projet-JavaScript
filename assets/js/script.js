@@ -3,7 +3,6 @@ var input = document.getElementById('send');
 
 
 input.addEventListener('click', () => {
-  console.log('test')
   var Vs = document.querySelector('.Vs');
   var form = document.querySelector('.form');
   var table = document.querySelector('.imgTable');
@@ -47,14 +46,11 @@ var userChoice;
 var computerChoice;
 var userArea = document.querySelector('.case');
 
-
+var cpuArea = document.querySelector('.computer');
 
 var rock = document.getElementById('rock');
 var paper = document.getElementById('paper');
 var cut = document.getElementById('cut');
-
-var user_icon = document.querySelector('.case');
-var computer_icon = document.querySelector('.computer');
 
 var putUserScore = document.querySelector('.user-score');
 var putCpuScore = document.querySelector('.cpu-score');
@@ -105,39 +101,39 @@ var computerScore = 0;
   });
 })();
 
-
+let result = ['rock', 'paper', 'cut'] 
 
 var cpu = function () {
   choice = Math.random();
-  if (choice < 0.34) {
-    return "rock";
-  } else if (choice <= 0.67) {
-    return "paper";
-  } else {
-    return "cut";
+  if (choice < 0.33) {
+    return document.querySelector('.computer').innerHTML = '<img src="assets/img/pierre.png" alt="Pierre" class="imgShifumi img-rock" id="rock" draggable="true" data-hand="rock">' ;
+  } else if (choice >= 0.67) {
+    return document.querySelector('.computer').innerHTML = '<img src="assets/img/feuille.png" alt="Papier" class="imgShifumi img-paper" id="paper" draggable="true" data-hand="paper">' ;
+  } else if(choice > 0.67){
+    return document.querySelector('.computer').innerHTML = '<img src="assets/img/cut.png" alt="Ciseaux" class="imgShifumi img-cut" id="cut" draggable="true" data-hand="cut">' ;
   }
 }
 
 function whowins(cpu, user) {
 
-  if (cpu == "rock") {
+  if (cpu === 'rock') {
     if (user == "paper") {
-      userScore++;
+      userScore++; 
       changeColor('case');
-    } else if (user == "cut") {
+    } else if (user =="cut") {
       computerScore++;
       changeColor('computer')
     }
-  } else if (cpu == "paper") {
-    if (user == "rock") {
+  } else if (cpu === "paper") {
+    if (user =="rock") {
       computerScore++;
       changeColor('computer')
     } else if (user == "cut") {
       userScore++;
       changeColor('case')
     }
-  } else if (cpu == "cut") {
-    if (user == "rock") {
+  } else if (cpu === "cut") {
+    if (user =="rock") {
       userScore++;
       changeColor('case')
     } else if (user == "paper") {
@@ -145,6 +141,7 @@ function whowins(cpu, user) {
       changeColor('computer')
     }
   }
+ 
 
   function changeColor(entitiy) {
     var enty = entitiy;
@@ -161,5 +158,5 @@ function whowins(cpu, user) {
 
 function reset(){
   userArea.innerHTML = '';
-  console.log('fin')
+  cpuArea.innerHTML = '';
 }
