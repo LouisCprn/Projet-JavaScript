@@ -68,7 +68,7 @@ var computerScore = 0;
     userChoice = this.getAttribute("data-hand");
   }
 
-  rock.addEventListener('dragstart', (ev)=>{
+  rock.addEventListener('dragstart' , (ev)=>{
     ev.dataTransfer.setData("text", ev.target.id);
   })
 
