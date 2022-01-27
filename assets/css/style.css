@@ -152,10 +152,9 @@ h1 {
     grid-column: 4/5;
     grid-row: 4/5;
     margin-left: 5vw;
-    margin-bottom: 2vh;
     width: 150px;
     height: 150px;
-    border: 4px dashed ;
+    border: 4px dashed rgba(0, 0, 0, .5);
     z-index: 2;
     display: none;
     justify-content: center;
@@ -164,16 +163,16 @@ h1 {
 
  .case * {
     transform: rotate(90deg);
+    margin-bottom: 2vh;
  }
 
 .computer {
     grid-column: 6/7;
     grid-row: 4/5;
     margin-left: 5vw;
-    margin-bottom: 2vh;
     width: 150px;
     height: 150px;
-    border: 4px dashed ;
+    border: 4px dashed rgba(0, 0, 0, .5);
     z-index: 2;
     display: none;
     justify-content: center;
@@ -182,6 +181,7 @@ h1 {
 
 .computer * {
     transform: scaleY(-1) rotate(-90deg);
+    margin-bottom: 2vh;
  }
 
 .pourcentagePlayer {
