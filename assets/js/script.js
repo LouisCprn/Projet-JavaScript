@@ -264,7 +264,10 @@ restart.addEventListener('click', ()=>{
   window.location.reload();
 })
 
-var allCardsPlayer = document.querySelectorAll('.cards')
+const mq = window.matchMedia("(max-width: 1200px)");
+
+if (mq.matches) {
+  var allCardsPlayer = document.querySelectorAll('.cards')
 
 allCardsPlayer.forEach(function(Player) {
   Player.addEventListener('click', function() {
@@ -361,3 +364,4 @@ allCardsPlayer.forEach(function(Player) {
 
   })
 })
+}
