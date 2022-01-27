@@ -275,7 +275,8 @@ allCardsPlayer.forEach(function(Player) {
         paper.value = "feuille";
         userChoice = paper.value;
         computerChoice = randomComputer();
-  
+        document.querySelector('.case').innerHTML = '<img src="assets/img/feuille.png" alt="Papier" class="imgShifumi" id="paper" draggable="true" data-hand="paper">' ;
+
         switch (computerChoice) {
           case "feuille":
             break;
@@ -295,7 +296,8 @@ allCardsPlayer.forEach(function(Player) {
         rock.value = "pierre";
         userChoice = rock.value;
         computerChoice = randomComputer();
-  
+        document.querySelector('.case').innerHTML = '<img src="assets/img/pierre.png" alt="Pierre" class="imgShifumi" id="rock" draggable="true" data-hand="rock">' ;
+
         switch (computerChoice) {
           case "pierre":
             break;
@@ -314,7 +316,8 @@ allCardsPlayer.forEach(function(Player) {
         cut.value = "ciseaux";
         userChoice = cut.value;
         computerChoice = randomComputer();
-  
+        document.querySelector('.case').innerHTML = '<img src="assets/img/cut.png" alt="Ciseaux" class="imgShifumi" id="cut" draggable="true" data-hand="cut">' ;
+
         switch (computerChoice) {
           case "ciseaux":
             break;

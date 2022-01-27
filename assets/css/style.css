@@ -193,8 +193,6 @@ h1 {
 
 .computer * {
     transform: scaleY(-1) rotate(-90deg);
-    margin-top: 2vh;
-    margin-left: 2vw;
  }
 
 .pourcentagePlayer {
@@ -217,13 +215,13 @@ h1 {
     font-size: 3vh;
     font-weight: bold;
     border-radius: 200px;
-    margin-left: 3vh;
+    margin-left: 4vw;
+    margin-top: 2vh;
     border: none;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: none;
     color: #828489;
-    margin-left: 5.5vw;
 }
 
 .restart:hover {
@@ -273,8 +271,6 @@ h1 {
     padding: 30px;
 }
 
-
-
 .modalregle {
     display: grid;
     grid-column: 10/10;
@@ -313,17 +309,16 @@ h1 {
 .imglose {
     width: 230px;
     height: 230px;
-    margin-top: 8.5vh;
+    margin-top: 10.5vh;
 }
-
-
 
 .lose {
     grid-column: 4/10;
     grid-row: 8/10;
     font-family: "NotoSansJP-Bold";
     font-size: 6vh;
-    margin-top: 14.5vh;
+    margin-top: 14vh;
+    margin-left: 6vw;
     text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     color: #4D7EA8;
 }
@@ -337,6 +332,7 @@ h1 {
     border-radius: 70%;
     height: 350px;
     width: 350px;
+    margin-top: 1.5vh;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
     display: none;
     flex-direction: column;
@@ -354,7 +350,7 @@ h1 {
     grid-row: 8/10;
     font-family: "NotoSansJP-Bold";
     font-size: 6vh;
-    margin-top: 14.5vh;
+    margin-top: 14vh;
     text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     color: #F86624;
 }
