@@ -8,15 +8,7 @@ html{
     overflow-y: hidden;
 }
 
-@font-face {
-    font-family: "NotoSansJP-Bold";
-    src: url(../font/NotoSansJP-Bold.otf);
-}
-
-@font-face {
-    font-family: "NotoSansJP-Regular";
-    src: url(../font/NotoSansJP-Regular.otf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
 body{
     background-color: #FAF0E6;
@@ -26,7 +18,7 @@ body{
 .form {
     grid-column: 5/7;
     grid-row: 2/3;
-    font-family: "NotoSansJP-Regular";
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 3vh;
     text-align: center;
 }
@@ -79,7 +71,7 @@ body{
 }
 
 h1 {
-    font-family: "NotoSansJP-Bold";
+    font-family: 'Noto Sans JP', sans-serif; 
     margin-top: 4vh;
     margin-left: 10vh;
     font-size: 6vh;
@@ -89,7 +81,7 @@ h1 {
 
 .Vs {
     background-color: #fff;
-    font-family: "NotoSansJP-Regular";
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 5vh;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -120,7 +112,7 @@ h1 {
     display: none;
     grid-column: 9/10;
     grid-row: 2/3;
-    font-family: "NotoSansJP-Regular";
+    font-family: 'Noto Sans JP', sans-serif; ;
     font-size: 3vh;
     text-align: center;
 }
@@ -197,7 +189,7 @@ h1 {
     margin-left: 8.8vw;
     align-items: center;
     font-size: 5vh;
-    font-family: "NotoSansJP-Regular";
+    font-family: 'Noto Sans JP', sans-serif; ;
 }
 
 .restart {
@@ -252,7 +244,7 @@ h1 {
     bottom: 7%;
     width: 100%;
     height: 100%;
-    font-family: "NotoSansJP-Regular";
+    font-family: 'Noto Sans JP', sans-serif; ;
 }
 
 .modal-content {
@@ -310,11 +302,11 @@ h1 {
 .lose {
     grid-column: 4/10;
     grid-row: 8/10;
-    font-family: "NotoSansJP-Bold";
+    font-family: 'Noto Sans JP', sans-serif; 
     font-size: 6vh;
     margin-top: 14vh;
-    margin-left: 6vw;
-    text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-weight: bold;
+    text-shadow: rgb(173, 173, 173) 0px 5px 15px;
     color: #4D7EA8;
 }
 
@@ -343,9 +335,10 @@ h1 {
 .win {
     grid-column: 4/10;
     grid-row: 8/10;
-    font-family: "NotoSansJP-Bold";
+    font-family: 'Noto Sans JP', sans-serif; 
     font-size: 6vh;
     margin-top: 14vh;
+    font-weight: bold;
     text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     color: #F86624;
 }
@@ -380,7 +373,7 @@ h1 {
 
 
     h1 {
-        font-family: "NotoSansJP-Bold";
+        font-family: 'Noto Sans JP', sans-serif; 
         margin-top: 4vh;
         margin-left: 10vh;
         font-size: 6vh;
@@ -389,7 +382,7 @@ h1 {
     }
 
     .form {
-        font-family: "NotoSansJP-Regular";
+        font-family: 'Noto Sans JP', sans-serif; ;
         font-size: 2vh;
         grid-column: 4/15;
         grid-row: 6/19;
@@ -519,8 +512,9 @@ h1 {
     .lose {
         grid-column: 1/20;
         grid-row: 15/20;
-        font-family: "NotoSansJP-Bold";
+        font-family: 'Noto Sans JP', sans-serif; 
         font-size: 6vh;
+        font-weight: bold;
         text-shadow: rgb(173, 173, 173) 0px 5px 15px;
         color: #4D7EA8;
     }
@@ -546,8 +540,9 @@ h1 {
     .win {
         grid-column: 1/20;
         grid-row: 15/20;
-        font-family: "NotoSansJP-Bold";
+        font-family: 'Noto Sans JP', sans-serif; 
         font-size: 6vh;
+        font-weight: bold;
         text-shadow: rgb(173, 173, 173) 0px 5px 15px;
         color: #F86624;
     }
