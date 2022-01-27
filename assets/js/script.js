@@ -1,7 +1,6 @@
 // ----- Page Prénom -------
 var input = document.getElementById('send');
 
-
 input.addEventListener('click', () => {
   var Vs = document.querySelector('.Vs');
   var form = document.querySelector('.form');
@@ -15,11 +14,11 @@ input.addEventListener('click', () => {
   log.textContent += `${prenom.value}`;
   form.style.display = 'none';
   Vs.style.display = 'flex';
-  table.style.display = 'block';
-  score.style.display = 'block';
+  table.style.display = 'grid';
+  score.style.display = 'grid';
   carte.style.display = 'flex';
   player.style.display = 'flex';
-  computer.style.display = 'block';
+  computer.style.display = 'flex';
   pourcentagePlayer.style.display = 'flex';
 })
 
@@ -173,10 +172,6 @@ var computerScore = 0;
         break;
     }
     
-    
-
-  
-
     setTimeout(function(){
       reset();
       showresult();
@@ -185,8 +180,6 @@ var computerScore = 0;
 
   });
 })();
-
-
 
 let result = ['pierre', 'feuille', 'ciseaux'] 
 var computerChoice = "";
@@ -269,4 +262,99 @@ var restart = document.querySelector('.restart');
 
 restart.addEventListener('click', ()=>{
   window.location.reload();
+})
+
+var allCardsPlayer = document.querySelectorAll('.cards')
+
+allCardsPlayer.forEach(function(Player) {
+  Player.addEventListener('click', function() {
+    Player = this.id;
+    console.log('1',Player);
+    switch (Player) {
+      case 'paper':
+        paper.value = "feuille";
+        userChoice = paper.value;
+        computerChoice = randomComputer();
+  
+        switch (computerChoice) {
+          case "feuille":
+            break;
+          case "ciseaux":
+            document.querySelector('.cpu-score').textContent = parseInt(document.querySelector('.cpu-score').textContent) + 1;
+            break;
+          case "pierre":
+         
+            document.querySelector('.user-score').textContent = parseInt(document.querySelector('.user-score').textContent) + 1;
+            pourcentage()
+            break;
+        }
+  
+        break;
+  
+      case 'rock':
+        rock.value = "pierre";
+        userChoice = rock.value;
+        computerChoice = randomComputer();
+  
+        switch (computerChoice) {
+          case "pierre":
+            break;
+          case "feuille":
+            document.querySelector('.cpu-score').textContent = parseInt(document.querySelector('.cpu-score').textContent) + 1;
+            break;
+          case "ciseaux":
+            document.querySelector('.user-score').textContent = parseInt(document.querySelector('.user-score').textContent) + 1;
+            pourcentage()
+            break;
+        }
+  
+        break;
+  
+      case 'cut':
+        cut.value = "ciseaux";
+        userChoice = cut.value;
+        computerChoice = randomComputer();
+  
+        switch (computerChoice) {
+          case "ciseaux":
+            break;
+          case "pierre":
+            document.querySelector('.cpu-score').textContent = parseInt(document.querySelector('.cpu-score').textContent) + 1;
+            break;
+          case "feuille":
+           
+            document.querySelector('.user-score').textContent = parseInt(document.querySelector('.user-score').textContent) + 1;
+            pourcentage()
+            break;
+        }
+  
+        break;
+    }
+    switch(computerChoice){
+      case 'pierre':
+        if(computerChoice == 'pierre'){
+          document.querySelector('.computer').innerHTML = '<img src="assets/img/pierre.png" alt="Pierre" class="imgShifumi" id="rock" draggable="true" data-hand="rock">' ;
+        
+        };
+        break;
+      case 'feuille':
+        if(computerChoice == 'feuille'){
+           document.querySelector('.computer').innerHTML = '<img src="assets/img/feuille.png" alt="Papier" class="imgShifumi" id="paper" draggable="true" data-hand="paper">' ;
+          
+        };
+        break;
+      case 'ciseaux':
+        if(computerChoice == 'ciseaux'){
+           document.querySelector('.computer').innerHTML = '<img src="assets/img/cut.png" alt="Ciseaux" class="imgShifumi" id="cut" draggable="true" data-hand="cut">' ;
+          
+        };
+        break;
+    }
+
+    setTimeout(function(){
+      reset();
+      showresult();
+    }, 1000);
+
+  })
 })
