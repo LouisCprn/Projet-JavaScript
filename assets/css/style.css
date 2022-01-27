@@ -56,11 +56,11 @@ body{
 
 #slashbg{
    position: absolute;
-   right: 50%;
+   right: 60%;
     width: 10vw;
-    height: 150vh;
+    height: 220vh;
     background-color: #828489;
-    transform: rotate(30deg) translateY(-20%);
+    transform: rotate(55deg) translateY(-20%);
     z-index: -1;
 }
 
