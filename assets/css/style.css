@@ -56,11 +56,11 @@ body{
 
 #slashbg{
    position: absolute;
-   right: 60%;
+   right: 40%;
     width: 10vw;
     height: 220vh;
     background-color: #828489;
-    transform: rotate(55deg) translateY(-20%);
+    transform: rotate(55deg) translateY(-10%);
     z-index: -1;
 }
 
@@ -152,6 +152,7 @@ h1 {
     grid-column: 4/5;
     grid-row: 4/5;
     margin-left: 5vw;
+    margin-bottom: 2vh;
     width: 150px;
     height: 150px;
     border: 4px dashed ;
@@ -169,6 +170,7 @@ h1 {
     grid-column: 6/7;
     grid-row: 4/5;
     margin-left: 5vw;
+    margin-bottom: 2vh;
     width: 150px;
     height: 150px;
     border: 4px dashed ;
