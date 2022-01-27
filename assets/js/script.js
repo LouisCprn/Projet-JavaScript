@@ -247,6 +247,7 @@ function showresult() {
       pourcentagePlayer.style.display = 'none';
       document.body.style.background = "#FAF0E6";
       slash.style.display = 'none';
+      restart.style.display = 'grid';
     };
   var cpscore = document.querySelector('.cpu-score').textContent;
     if (cpscore == 3){
@@ -259,10 +260,13 @@ function showresult() {
       computer.style.display = 'none';
       pourcentagePlayer.style.display = 'none';
       document.body.style.background = "#828489";
+      restart.style.display = 'grid';
     }
     
   }
 
+var restart = document.querySelector('.restart');
 
-  
-
+restart.addEventListener('click', ()=>{
+  window.location.reload();
+})
