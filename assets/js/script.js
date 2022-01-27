@@ -229,7 +229,7 @@ function showresult() {
   var slash = document.getElementById('slashbg');
 
   var userscore = document.querySelector('.user-score').textContent;
-    if (userscore == 3){
+    if (userscore == 5){
       thumbsup.style.display = 'flex';
       Vs.style.display = 'none';
       table.style.display = 'none';
@@ -243,7 +243,7 @@ function showresult() {
       restart.style.display = 'grid';
     };
   var cpscore = document.querySelector('.cpu-score').textContent;
-    if (cpscore == 3){
+    if (cpscore == 5){
       thumbsdown.style.display = 'flex';
       Vs.style.display = 'none';
       table.style.display = 'none';
