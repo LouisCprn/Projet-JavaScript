@@ -478,7 +478,7 @@ h1 {
  
     .carte {
         grid-column: 1/20;
-        grid-row: 17/20;
+        grid-row: 15/20;
     }  
  
     .imgDiv {
@@ -486,10 +486,7 @@ h1 {
         width: 60px;
         margin-left: 5%;
         margin-bottom: 2vh;
-        padding-left: 25px;
-        padding-right: 25px;
-        padding-top: 25px;
-        padding-bottom: 25px;
+        padding: 25px;
     }
 
     /* ----- Lose ----- */
