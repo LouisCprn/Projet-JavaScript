@@ -175,7 +175,7 @@ var computerScore = 0;
     setTimeout(function(){
       reset();
       showresult();
-    }, 1000);
+    }, 2000);
 
 
   });
@@ -360,7 +360,7 @@ allCardsPlayer.forEach(function(Player) {
     setTimeout(function(){
       reset();
       showresult();
-    }, 1000);
+    }, 2000);
 
   })
 })
