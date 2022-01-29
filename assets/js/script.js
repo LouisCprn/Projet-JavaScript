@@ -9,7 +9,6 @@ input.addEventListener('click', () => {
   var carte = document.querySelector('.carte');
   var player = document.querySelector('.case');
   var computer = document.querySelector('.computer');
-  var pourcentagePlayer = document.querySelector('.pourcentagePlayer');
 
   log.textContent += `${prenom.value}`;
   form.style.display = 'none';
@@ -19,7 +18,6 @@ input.addEventListener('click', () => {
   carte.style.display = 'flex';
   player.style.display = 'flex';
   computer.style.display = 'flex';
-  pourcentagePlayer.style.display = 'flex';
 })
 
 // Modale règles
