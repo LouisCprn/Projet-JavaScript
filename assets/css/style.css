@@ -155,7 +155,7 @@ h1 {
     margin-left: 5vw;
     width: 150px;
     height: 150px;
-    border: 4px dashed rgba(0, 0, 0, .5);
+    border: 4px dashed #51B14880;
     z-index: 2;
     display: none;
     justify-content: center;
@@ -173,7 +173,7 @@ h1 {
     margin-left: 5vw;
     width: 150px;
     height: 150px;
-    border: 4px dashed rgba(0, 0, 0, .5);
+    border: 4px dashed rgba(177, 22, 22, 0.5);
     z-index: 2;
     display: none;
     justify-content: center;
@@ -240,6 +240,7 @@ h1 {
 }
 
 .modal {
+    display: none;
     position: absolute;
     z-index: 2;
     width: 100vw;
